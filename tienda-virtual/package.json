@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Tienda virtual con arquitectura de microservicios (Node.js + Express)",
   "private": true,
+  "packageManager": "pnpm@10.11.0",
   "engines": { "node": ">=18" },
   "scripts": {
     "start": "node scripts/start-all.js",

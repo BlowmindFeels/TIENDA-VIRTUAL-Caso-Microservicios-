@@ -23,13 +23,14 @@ Node.js + Express. Cada módulo es un **proceso independiente** con su **propia 
 
 ## Cómo ejecutarlo en VS Code
 
-Requisito: **Node.js 18 o superior**.
+Requisitos: **Node.js 18 o superior** y **pnpm 10.11.0**. Si Corepack está disponible,
+activa pnpm con `corepack enable`; Corepack usará la versión fijada en `package.json`.
 
 1. Abrir la carpeta en VS Code (`Archivo > Abrir carpeta`).
 2. Terminal integrada (`Ctrl+ñ`):
    ```bash
-   npm install
-   npm start
+   pnpm install
+   pnpm start
    ```
 3. Abrir <http://localhost:3000>.
 
@@ -39,12 +40,17 @@ Con depuración: panel *Ejecutar y depurar* (`Ctrl+Shift+D`) → **Toda la tiend
 
 **Automático** (levanta todo, apaga cada módulo uno a uno y verifica):
 ```bash
-npm run test:resiliencia
+pnpm run test:resiliencia
 ```
 
-**Manual**: con `npm start` corriendo, abre otra terminal y ejecuta cada servicio por separado
-(`npm run start:productos`, etc.) en lugar de `npm start`; detén uno con `Ctrl+C` y observa en
+**Manual**: con `pnpm start` corriendo, abre otra terminal y ejecuta cada servicio por separado
+(`pnpm run start:productos`, etc.) en lugar de `pnpm start`; detén uno con `Ctrl+C` y observa en
 <http://localhost:3000> cómo solo ese módulo pasa a "Sin conexión" mientras los demás siguen operando.
+
+Se usa pnpm con versión fijada en `package.json` y `pnpm-lock.yaml` para mantener instalaciones
+reproducibles. Su estructura de dependencias aislada evita que un módulo use accidentalmente
+paquetes que no declara directamente. En integración continua, instala con
+`pnpm install --frozen-lockfile` para validar que el manifiesto coincide con el lockfile.
 
 ## Cómo se resuelven los problemas planteados
 

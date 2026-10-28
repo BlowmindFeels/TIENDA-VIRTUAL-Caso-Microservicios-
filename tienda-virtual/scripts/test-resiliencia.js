@@ -1,6 +1,6 @@
 // Prueba automática de resiliencia: levanta todo el sistema, "desconecta" cada módulo
 // (matando su proceso) y comprueba que los demás siguen funcionando.
-// Uso: npm run test:resiliencia
+// Uso: pnpm run test:resiliencia
 const { spawn } = require('child_process');
 const fs = require('fs');
 const os = require('os');
