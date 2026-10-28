@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Instalar dependencias", "type": "npm", "script": "install", "problemMatcher": [] },
+    { "label": "Iniciar toda la tienda", "type": "npm", "script": "start", "problemMatcher": [], "isBackground": true },
+    { "label": "Probar resiliencia", "type": "npm", "script": "test:resiliencia", "problemMatcher": [], "group": "test" }
+  ]
+}

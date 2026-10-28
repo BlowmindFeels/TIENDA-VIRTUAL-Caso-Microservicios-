@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    { "name": "Productos", "type": "node", "request": "launch", "program": "${workspaceFolder}/services/productos/index.js", "console": "integratedTerminal" },
+    { "name": "Clientes", "type": "node", "request": "launch", "program": "${workspaceFolder}/services/clientes/index.js", "console": "integratedTerminal" },
+    { "name": "Pedidos", "type": "node", "request": "launch", "program": "${workspaceFolder}/services/pedidos/index.js", "console": "integratedTerminal" },
+    { "name": "Gateway", "type": "node", "request": "launch", "program": "${workspaceFolder}/services/gateway/index.js", "console": "integratedTerminal" },
+    { "name": "Prueba de resiliencia", "type": "node", "request": "launch", "program": "${workspaceFolder}/scripts/test-resiliencia.js", "console": "integratedTerminal" }
+  ],
+  "compounds": [
+    {
+      "name": "Toda la tienda (4 procesos con debugger)",
+      "configurations": ["Productos", "Clientes", "Pedidos", "Gateway"],
+      "stopAll": true
+    }
+  ]
+}
